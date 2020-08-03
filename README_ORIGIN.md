@@ -29,7 +29,7 @@
 	* [侧边栏](#侧边栏)
 	* [迷你关于我](#mini-about-me)
 	* [推荐标签](#featured-tags)
-	* [好友链接](#friends)
+	* [相关性链接](#links)
 	* [HTML5 演示文档布局](#keynote-layout)
 * 评论与 Google/Baidu Analytics
 	* [评论](#comment)
@@ -141,7 +141,7 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 
 ![](http://ww4.sinaimg.cn/large/006tKfTcgy1fgrgbgf77aj308i02v748.jpg)
 
-### Friends
+### links
 
 好友链接部分。这会在全部页面显示。
 

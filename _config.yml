@@ -96,8 +96,13 @@ friends: [
     {
         title: "spring.io",
         href: "https://spring.io/"
-    },{
+    },
+    {
         title: "Readhub",
         href: "https://readhub.cn/topics"
+    },
+    {
+        title: "阮一峰的网络日志",
+        href: "http://www.ruanyifeng.com/blog/"
     }
 ]

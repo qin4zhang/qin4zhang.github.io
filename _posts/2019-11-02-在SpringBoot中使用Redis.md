@@ -1,16 +1,18 @@
 ---
 layout:     post
-title:      Linux基本知识
-subtitle:   介绍Linux
-date:       2019-07-27
+title:      在SpringBoot中使用Redis
+subtitle:   在SpringBoot中使用Redis
+date:       2019-11-02
 author:     qin4zhang
 header-img: img/post-bg-github-cup.jpg 
 catalog: true 						# 是否归档
 tags:								#标签
-    - Linux
+    - Redis
+    - Spring Boot
+    - Spring
 ---
 # 注意
 > 想法及时记录，实现可以待做。
 
 待定大纲：
-1. 介绍Linux的源头与发展，各种衍生系统
+1. 在SpringBoot中使用Redis

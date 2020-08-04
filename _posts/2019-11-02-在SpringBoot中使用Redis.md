@@ -4,7 +4,7 @@ title:      在SpringBoot中使用Redis
 subtitle:   在SpringBoot中使用Redis
 date:       2019-11-02
 author:     qin4zhang
-header-img: img/post-bg-github-cup.jpg 
+header-img: img/post-bg-universe.jpg 
 catalog: true 						# 是否归档
 tags:								#标签
     - Redis

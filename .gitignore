@@ -35,3 +35,5 @@ Temporary Items
 _site
 /.idea/
 /.jekyll-cache/
+/node_modules/
+/yarn.lock

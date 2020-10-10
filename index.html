@@ -19,7 +19,8 @@ description: "With the new day comes new strength and new thoughts."
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B
+        %-d, %Y" }}
     </p>
 </div>
 <hr>
@@ -30,12 +31,23 @@ description: "With the new day comes new strength and new thoughts."
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Previous</a>
+    </li>
+    {% else %}
+    <li class="previous">
+        <span>到头啦~</span>
     </li>
     {% endif %}
+    <li class="middle">
+        <span>Page: {{ paginator.page }} of {{ paginator.total_pages }} Total: {{paginator.total_posts}}</span>
+    </li>
     {% if paginator.next_page %}
     <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &rarr;</a>
+    </li>
+    {% else %}
+    <li class="next">
+        <span>到尾啦~</span>
     </li>
     {% endif %}
 </ul>

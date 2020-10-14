@@ -55,6 +55,8 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
+disqus:
+  enable: true
 disqus_username: qin4zhang
 
 # Gitalk
@@ -92,20 +94,23 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
-
+# Collections
+collections:
+  html:
+    output: true
 
 # Links
 links: [
-    {
-        title: "spring.io",
-        href: "https://spring.io/"
-    },
-    {
-        title: "Readhub",
-        href: "https://readhub.cn/topics"
-    },
-    {
-        title: "阮一峰",
-        href: "http://www.ruanyifeng.com/blog/"
-    }
+{
+  title: "spring.io",
+  href: "https://spring.io/"
+},
+{
+  title: "Readhub",
+  href: "https://readhub.cn/topics"
+},
+{
+  title: "阮一峰",
+  href: "http://www.ruanyifeng.com/blog/"
+}
 ]

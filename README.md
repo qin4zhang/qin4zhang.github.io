@@ -8,3 +8,8 @@
 
 ## 数据存储
 1. [MySQL数据类型](./_posts/2019-06-30-MySQL数据类型概览.md)
+
+
+## 致谢
+1. 这个模板是从[@qiubaiying](https://github.com/qiubaiying/qiubaiying.github.io) 这里fork的，然后做了微调，感谢该作者帮助。
+2. 感谢Github Pages、Jekyll、Bootstrap的生态帮助。

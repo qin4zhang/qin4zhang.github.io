@@ -2,7 +2,7 @@
 layout:     post
 title:      Feign通过GET发送带body请求的问题分析
 subtitle:   微服务
-date:       2020-03-07
+date:       2020-03-14
 author:     qin4zhang
 header-img: img/post-bg-universe.jpg 
 catalog: true 						# 是否归档

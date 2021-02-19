@@ -648,7 +648,7 @@ d: n |= n >>> 4 = n | (n >>> 4) = 0111 | 0000 = 0111
 
 ## 参考
 
-1. [HashMap 源码详细分析(JDK1.8)](https://segmentfault.com/a/1190000012926722)
-2. [Java集合框架之HashMap详解](https://yanglukuan.github.io/2017/08/31/java/HashMap%E8%AF%A6%E8%A7%A3/)
-3. [Java 8系列之重新认识HashMap](https://tech.meituan.com/2016/06/24/java-hashmap.html)
+1. <a href="https://segmentfault.com/a/1190000012926722" target="_blank">HashMap 源码详细分析(JDK1.8)</a>
+2. <a href="https://yanglukuan.github.io/2017/08/31/java/HashMap%E8%AF%A6%E8%A7%A3/" target="_blank">Java集合框架之HashMap详解</a>
+3. <a href="https://tech.meituan.com/2016/06/24/java-hashmap.html" target="_blank">Java 8系列之重新认识HashMap</a>
 

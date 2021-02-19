@@ -9,6 +9,7 @@ catalog: true 						# 是否归档
 tags:								#标签
     - Java8
     - HashMap
+    - Map
 
 ---
 # 注意
@@ -152,6 +153,30 @@ d: n |= n >>> 4 = n | (n >>> 4) = 0111 | 0000 = 0111
 ### 查询
 
 ```
+
+    /**
+     * HashMap的基本的存储Node结构
+     * Basic hash bin node, used for most entries.  (See below for
+     * TreeNode subclass, and in LinkedHashMap for its Entry subclass.)
+     */
+    static class Node<K,V> implements Map.Entry<K,V> {
+        // 不可变的hash值，一旦Node初始化，该值不在允许改变。
+        final int hash;
+        // 不可变键
+        final K key;
+        // 值，没有那么多限制，毕竟允许修改。
+        V value;
+        // next引用，非常有用，可以组成单向链表。
+        Node<K,V> next;
+
+        Node(int hash, K key, V value, Node<K,V> next) {
+            this.hash = hash;
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
+    }
+
     public V get(Object key) {
         Node<K,V> e;
         return (e = getNode(hash(key), key)) == null ? null : e.value;
@@ -621,5 +646,9 @@ d: n |= n >>> 4 = n | (n >>> 4) = 0111 | 0000 = 0111
 
 ``` 
 
+## 参考
 
+1. [HashMap 源码详细分析(JDK1.8)](https://segmentfault.com/a/1190000012926722)
+2. [Java集合框架之HashMap详解](https://yanglukuan.github.io/2017/08/31/java/HashMap%E8%AF%A6%E8%A7%A3/)
+3. [Java 8系列之重新认识HashMap](https://tech.meituan.com/2016/06/24/java-hashmap.html)
 

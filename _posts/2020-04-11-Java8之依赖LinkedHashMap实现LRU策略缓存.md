@@ -25,7 +25,7 @@ Map常用有哪些呢？如图所示：
 ## 简介
 LinkedHashMap 继承自 HashMap，在 HashMap 基础上，通过维护一条双向链表，解决了 HashMap 不能随时保持遍历顺序和插入顺序一致的问题。
 
-如果不熟悉LinkedHashMap，可以看[Java8之LinkedHashMap介绍]({% post_url 2020-04-04-Java8之LinkedHashMap介绍 %})
+如果不熟悉LinkedHashMap，可以看<a href="https://qin4zhang.github.io/2020/04/04/Java8%E4%B9%8BLinkedHashMap%E4%BB%8B%E7%BB%8D/" target="_blank">Java8之LinkedHashMap介绍</a>
 
 ## 分析
 

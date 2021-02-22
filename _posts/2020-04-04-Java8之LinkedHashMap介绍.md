@@ -33,7 +33,7 @@ HashMap允许键和值为null，如果键为null，此时的hash码是0，这点
 
 它的复杂度一般来说是常数级，也就是O(1)，但是也不绝对，如果有hash碰撞了，有可能退化为O(n)或者是O(log n)。
 
-如果不熟悉HashMap，可以看![Java8之HashMap介绍]({{site.url}}/_posts/2020-03-21-Java8之HashMap介绍.md)。
+如果不熟悉HashMap，可以看<a href="https://qin4zhang.github.io/2020/03/21/Java8%E4%B9%8BHashMap%E4%BB%8B%E7%BB%8D/" target="_blank">Java8之HashMap介绍</a>
 
 ## 分析
 

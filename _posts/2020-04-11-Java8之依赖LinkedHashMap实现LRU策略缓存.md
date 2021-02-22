@@ -27,8 +27,6 @@ LinkedHashMap 继承自 HashMap，在 HashMap 基础上，通过维护一条双�
 
 如果不熟悉LinkedHashMap，可以看<a href="https://qin4zhang.github.io/2020/04/04/Java8%E4%B9%8BLinkedHashMap%E4%BB%8B%E7%BB%8D/" target="_blank">Java8之LinkedHashMap介绍</a>
 
-[Java8之LinkedHashMap介绍]({% post_url 2020-04-04-Java8之LinkedHashMap介绍 %})
-
 ## 分析
 
 本文主要介绍如何依赖LinkedHashMap实现LRU缓存。

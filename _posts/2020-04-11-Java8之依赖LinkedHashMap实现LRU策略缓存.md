@@ -2,7 +2,7 @@
 layout:     post
 title:      Java8之依赖LinkedHashMap实现LRU策略缓存
 subtitle:   HashMap
-date:       2020-04-04
+date:       2020-04-11
 author:     qin4zhang
 header-img: img/post-bg-universe.jpg 
 catalog: true 						# 是否归档

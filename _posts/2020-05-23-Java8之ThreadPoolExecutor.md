@@ -572,8 +572,8 @@ ThreadPoolExecutor的UML类图如图所示：
 ## 参考
 
 1. <a href="https://www.cnblogs.com/sanzao/p/10712778.html" target="_blank">并发系列（6）之 ThreadPoolExecutor 详解</a>
-1. <a href="https://www.pdai.tech/md/java/thread/java-thread-x-juc-executor-ThreadPoolExecutor.html" target="_blank">JUC线程池: ThreadPoolExecutor详解</a>
-1. <a href="https://www.cnblogs.com/yougewe/p/12267274.html" target="_blank">线程池技术之：ThreadPoolExecutor 源码解析</a>
+2. <a href="https://www.pdai.tech/md/java/thread/java-thread-x-juc-executor-ThreadPoolExecutor.html" target="_blank">JUC线程池: ThreadPoolExecutor详解</a>
+3. <a href="https://www.cnblogs.com/yougewe/p/12267274.html" target="_blank">线程池技术之：ThreadPoolExecutor 源码解析</a>
 
 
 

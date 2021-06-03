@@ -19,6 +19,10 @@ tags:								#标签
 
 并且它们提供了一种约束和管理资源的方法，包括线程在执行任务集合时消耗的资源。每个任务还维护一些基本的统计数据，如已完成的任务数量。
 
+使用线程池的好处有：
+- 可管理：线程属于稀缺资源，不能无限制创建，否则会造成系统的稳定性。使用线程池可以进行统一的分配、调优和监控。
+- 性能提升：创建线程是个很大的开销，能复用线程对于性能的提升有帮助。
+
 ThreadPoolExecutor的UML类图如图所示：
 
 ![ThreadPoolExecutor]({{site.url}}/img/java/ThreadPoolExecutor.png)
@@ -319,6 +323,7 @@ ThreadPoolExecutor的UML类图如图所示：
                 }
                 // 已经将worker添加进线程集合中，那么可以启动线程执行任务了
                 if (workerAdded) {
+                    // 启动线程，实际上去执行 Worker.run() 方法，最终执行的是Worker.runWorker，这才是重点。
                     t.start();
                     workerStarted = true;
                 }
@@ -574,6 +579,7 @@ ThreadPoolExecutor的UML类图如图所示：
 1. <a href="https://www.cnblogs.com/sanzao/p/10712778.html" target="_blank">并发系列（6）之 ThreadPoolExecutor 详解</a>
 2. <a href="https://www.pdai.tech/md/java/thread/java-thread-x-juc-executor-ThreadPoolExecutor.html" target="_blank">JUC线程池: ThreadPoolExecutor详解</a>
 3. <a href="https://www.cnblogs.com/yougewe/p/12267274.html" target="_blank">线程池技术之：ThreadPoolExecutor 源码解析</a>
+4. <a href="https://tech.meituan.com/2020/04/02/java-pooling-pratice-in-meituan.html" target="_blank">Java线程池实现原理及其在美团业务中的实践</a>
 
 
 

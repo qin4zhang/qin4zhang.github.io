@@ -10,6 +10,7 @@ tags:								#标签
     - Java
     - SynchronousQueue
     - Queue
+    - JUC
 
 ---
 # 注意
@@ -33,7 +34,21 @@ SynchronousQueue是BlockingQueue的一种实现，但是它很特殊，主要有
 2. 构造的时候，可以设置策略，公平或者非公平模式。
 3. 生产数据后一定会等待被消费，否则生产就会被阻塞。
 
+SynchronousQueue这种队列适合的场景就是任务处理很快速，否则一方要么消费阻塞，要么生产阻塞，都不是特别好的情况。
+
 JUC中Executors工厂中提供的newCachedThreadPool方法，队列使用的就是SynchronousQueue。
+
+那为什么newCachedThreadPool会选用SynchronousQueue而不是其他的BlockingQueue呢，因为通过TPE可以知道，线程池的工作流程是先使用核心线程，然后入队，最后根据最大线程数增加线程，增大消费能力。
+
+对于newCachedThreadPool的构造方法可以知道，核心线程数为0，最大线程数为一个很大的值，线程存活时间60s，那么意味着，如果使用其他的BlockingQueue，一定会有容量设置，也就是说，新增的任务直接入队，而此时，并没有线程来处理任务。
+
+那么，如果使用没有容量的其他队列呢，如果真这么用，那还要阻塞队列干嘛，用线程池干嘛，都没达到线程复用的效果，最后只能是通过最大线程数来新建线程处理任务，处理完线程便销毁，无法持续从队列获取任务继续工作。
+
+所以，一定需要使用的这种队列效果是，队列可以没有容量，但是通过最大线程数创建线程后，创建好的线程持续的去队列获取任务，线程不会被销毁，达到线程复用的目的。
+
+这种不就是SynchronousQueue的特点嘛，添加的任务，由于没有核心线程数，直接入队，由于队列大小为0，根据最大线程数创建新的线程，然后将队列的任务进行匹配，此时这个队列维护的就是一堆需要匹配的线程任务，所以这种任务一定要处理很及时很迅速，而且通过线程存活时间机制，能在60s的时间内避免线程数过多引起系统不稳定。
+
+当然，也要注意的是，使用不当，高并发下，有的任务处理不及时，是很有可能在60s的线程存活时间内，将线程创建的资源超过系统的限制，从而引起系统不稳定。
 
 
 ### 组成介绍
@@ -313,6 +328,7 @@ JUC中Executors工厂中提供的newCachedThreadPool方法，队列使用的就�
 
     public boolean offer(E e) {
         if (e == null) throw new NullPointerException();
+        // e不为null，有超时设置，但是超时时间为0纳秒
         return transferer.transfer(e, true, 0) != null;
     }
 ```
@@ -329,7 +345,7 @@ JUC中Executors工厂中提供的newCachedThreadPool方法，队列使用的就�
         throw new InterruptedException();
     }
 
-    // 获取头节点，然后移除队列的头节点，如果没有数据，要一直等着另一个线程写入数据
+    
     public E poll() {
         return transferer.transfer(null, true, 0);
     }

@@ -9,6 +9,7 @@ catalog: true 						# 是否归档
 tags:								#标签
     - Java
     - ThreadPoolExecutor
+    - JUC
 
 ---
 # 注意
@@ -222,7 +223,7 @@ ThreadPoolExecutor的UML类图如图所示：
             else if (workerCountOf(recheck) == 0)
                 addWorker(null, false);
         }
-        // 队列也满了，那么就尝试增加非核心工作线程，如果失败，则拒绝策略
+        // 队列也满了，那么就尝试增加非核心工作线程，会校验最大线程数，如果添加失败，则拒绝策略
         else if (!addWorker(command, false))
             reject(command);
     }

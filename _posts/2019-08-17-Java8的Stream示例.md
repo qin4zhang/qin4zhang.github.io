@@ -14,7 +14,7 @@ tags:								#标签
 > 想法及时记录，实现可以待做。
 
 ## 示例介绍
-java8提供了stream的流式处理方式，可以非常优雅的处理各种集合操作，远比之前各种循环嵌套要干净清爽许多，也是java时刻进步的表现。
+java8提供了stream的流式处理方式，可以非常优雅的处理各种集合操作，远比之前各种循环嵌套要干净清爽许多。
 
 ### 一般处理
 
@@ -81,4 +81,48 @@ Map<Department, Integer> totalByDept
                                                    Collectors.summingInt(Employee::getSalary)));
 
 ```
+
+### 复杂类型的分组聚合
+
+```
+Map<Tuple, List<BlogPost>> postsPerTypeAndAuthor = posts.stream()
+  .collect(groupingBy(post -> new Tuple(post.getType(), post.getAuthor())));
+```
+
+### 分组聚合后修改返回值
+
+```
+Map<BlogPostType, Set<BlogPost>> postsPerType = posts.stream()
+  .collect(groupingBy(BlogPost::getType, toSet()));
+```
+
+```
+Map<BlogPostType, String> postsPerType = posts.stream()
+  .collect(groupingBy(BlogPost::getType, 
+  mapping(BlogPost::getTitle, joining(", ", "Post titles: [", "]"))));
+```
+
+```
+EnumMap<BlogPostType, List<BlogPost>> postsPerType = posts.stream()
+  .collect(groupingBy(BlogPost::getType, 
+  () -> new EnumMap<>(BlogPostType.class), toList()));
+```
+
+### 多个字段分组聚合
+
+```
+Map<String, Map<BlogPostType, List>> map = posts.stream()
+  .collect(groupingBy(BlogPost::getAuthor, groupingBy(BlogPost::getType)));
+```
+
+### 并发分组聚合
+
+```
+ConcurrentMap<BlogPostType, List<BlogPost>> postsPerType = posts.parallelStream()
+  .collect(groupingByConcurrent(BlogPost::getType));
+```
+
+
+## 参考
+1. <a href="https://www.baeldung.com/java-groupingby-collector" target="_blank">Guide to Java 8 groupingBy Collector</a>
 

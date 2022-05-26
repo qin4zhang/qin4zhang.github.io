@@ -10,7 +10,7 @@
     },
     "bugs": "https://github.com/qin4zhang/qin4zhang.github.io/issues",
     "devDependencies": {
-        "grunt": ">=1.4.0",
+        "grunt": ">=1.5.3",
         "grunt-contrib-less": ">=2.1.0",
         "grunt-contrib-watch": ">=1.1.0",
         "grunt-banner": ">=0.6.0",
